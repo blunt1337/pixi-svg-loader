@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Test svg parsing</title>
+</head>
+<body>
+	<script src="makeTree.js"></script>
+	<script src="PaintBox.js"></script>
+    <script src="index.js"></script>
+	
+	<form id="form">
+		<textarea id="svg" placeholder="SVG content"></textarea>
+		<input type="submit" value="Test it and open the console"/>
+		<input type="button" value="Tast last tested svg" id="btn_last"/>
+	</form>
+	
+    <script>
+    window.DEBUG = true;
+    window.callPhantom = function (res) { console.log(res); };
+	
+	var btn_last = document.getElementById('btn_last');
+	var form = document.getElementById('form');
+	var svg = document.getElementById('svg');
+	
+	btn_last.onclick = function () {
+		var last_svg = localStorage.getItem('last_svg');
+		if (last_svg) {
+			svg.value = last_svg;
+			form.onsubmit();
+		} else {
+			alert('No svg as been tested yet');
+		}
+	};
+	
+	form.onsubmit = function (ev) {
+		ev && ev.preventDefault();
+		var value = svg.value;
+		localStorage.setItem('last_svg', value);
+    	window.launch(value);
+		return false;
+	};
+    </script>
+</body>
+</html>

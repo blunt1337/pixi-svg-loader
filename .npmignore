@@ -1,0 +1,22 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+*~
+*#
+
+# Temp
+.tmp
+*.hx
+
+# Node
+node_modules
+lib-cov
+*.seed
+*.log
+*.out
+*.pid
+.node_history
+npm-debug.log
+
+# Useless
+samples/*

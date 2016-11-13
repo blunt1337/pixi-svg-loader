@@ -1,0 +1,31 @@
+{
+  "name": "pixi-svg-loader",
+  "version": "1.0.0",
+  "description": "svg loader for pixi on webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blunt1337/pixi-svg-loader.git"
+  },
+  "keywords": [
+    "svg",
+    "pixi",
+    "pixi.js",
+    "pixijs",
+    "webpack"
+  ],
+  "author": "Olivier :3 <business@blunt.sh> (http://blunt.sh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blunt1337/pixi-svg-loader/issues"
+  },
+  "homepage": "https://github.com/blunt1337/pixi-svg-loader",
+  "dependencies": {
+    "binpacking": "0.0.1",
+    "loader-utils": "^0.2.16",
+    "phantom": "^3.0.2"
+  }
+}
