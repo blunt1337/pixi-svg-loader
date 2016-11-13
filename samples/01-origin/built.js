@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "/";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,8 @@ module.exports = function (svg_element_content, w, h, x, y) {
 
 /***/ },
 /* 1 */,
-/* 2 */
+/* 2 */,
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 var Svg2BaseTexture = __webpack_require__(0);var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;
@@ -105,7 +106,7 @@ var texture_4 = new Texture(atlas, new Rect(272, 134, 33, 28));
 
 
 // Class
-function Undefined() {
+function UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg() {
 	Container.call(this);
 	
 	var child_0 = this.sun = new Container(); this.addChild(child_0);
@@ -123,12 +124,12 @@ child_2.position.set(-135.00,0.00);
 child_4.position.set(0.50,66.00);
 
 }
-Undefined.prototype = Object.create(PIXI.Container.prototype);
-Undefined.prototype.constructor = Undefined;
-module.exports = Undefined;
+UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg.prototype = Object.create(PIXI.Container.prototype);
+UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg.prototype.constructor = UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg;
+module.exports = UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg;
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 // Renderer (compatible retina)
@@ -140,7 +141,7 @@ renderer.view.style.height = height + 'px';
 document.body.appendChild(renderer.view)
 
 // The SVG is now a PIXI Container, default origin of objects is 'cc' (center, center)
-var Origin = __webpack_require__(2);
+var Origin = __webpack_require__(3);
 
 // Instanciate
 var origin = new Origin();

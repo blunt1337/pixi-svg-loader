@@ -47,7 +47,7 @@ module.exports = function (content) {
 			}
 			
 			// Generate and return
-			callback(null, buildResult(svg, template))
+			callback(null, buildResult(svg, template, this))
 		}).catch(err => callback(err))
 	})
 }

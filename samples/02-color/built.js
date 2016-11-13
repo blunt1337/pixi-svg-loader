@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "/";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -103,7 +103,7 @@ var texture_1 = new Texture(atlas, new Rect(0, 0, 100, 100));
 
 
 // Class
-function Undefined() {
+function UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg() {
 	Container.call(this);
 	
 	var child_0 = this.fill = new Sprite(texture_0); this.addChild(child_0);
@@ -113,14 +113,15 @@ var child_1 = this.stroke = new Sprite(texture_1); this.addChild(child_1);
 
 	
 }
-Undefined.prototype = Object.create(PIXI.Container.prototype);
-Undefined.prototype.constructor = Undefined;
-module.exports = Undefined;
+UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg.prototype = Object.create(PIXI.Container.prototype);
+UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg.prototype.constructor = UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg;
+module.exports = UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg;
 
 /***/ },
 /* 2 */,
 /* 3 */,
-/* 4 */
+/* 4 */,
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 // Renderer (compatible retina)
