@@ -132,7 +132,7 @@ var renderer = PIXI.autoDetectRenderer(width, height, { antialias: false, resolu
 renderer.backgroundColor = 0xFFFFFF;
 renderer.view.style.width = width + 'px';
 renderer.view.style.height = height + 'px';
-document.body.appendChild(renderer.view)
+document.getElementById('color').appendChild(renderer.view)
 
 // The SVG is now a PIXI Container
 var Color = __webpack_require__(1);

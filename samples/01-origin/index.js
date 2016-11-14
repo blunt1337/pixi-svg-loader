@@ -4,7 +4,7 @@ var renderer = PIXI.autoDetectRenderer(width, height, { antialias: false, resolu
 renderer.backgroundColor = 0xFFFFFF;
 renderer.view.style.width = width + 'px';
 renderer.view.style.height = height + 'px';
-document.body.appendChild(renderer.view)
+document.getElementById('origin').appendChild(renderer.view)
 
 // The SVG is now a PIXI Container, default origin of objects is 'cc' (center, center)
 var Origin = require('../../index.js?default_origin=cc!svgo-loader!./origin.svg');
