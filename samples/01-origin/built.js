@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "/";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,8 +92,7 @@ module.exports = function (svg_element_content, w, h, x, y) {
 
 /***/ },
 /* 1 */,
-/* 2 */,
-/* 3 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 var Svg2BaseTexture = __webpack_require__(0);var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;
@@ -129,7 +128,7 @@ UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg.prototype.construc
 module.exports = UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg;
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 // Renderer (compatible retina)
@@ -141,7 +140,7 @@ renderer.view.style.height = height + 'px';
 document.body.appendChild(renderer.view)
 
 // The SVG is now a PIXI Container, default origin of objects is 'cc' (center, center)
-var Origin = __webpack_require__(3);
+var Origin = __webpack_require__(2);
 
 // Instanciate
 var origin = new Origin();

@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "/";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -97,9 +97,10 @@ module.exports = function (svg_element_content, w, h, x, y) {
 var Svg2BaseTexture = __webpack_require__(0);var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;
 
 // Textures
-var atlas = Svg2BaseTexture("<style>.st0{fill:#fff}.st1{fill:none;stroke:#ddd;stroke-width:20;stroke-miterlimit:10}</style><g transform=\"translate(0 0)\"><path id=\"_x23_stroke\" class=\"st1\" d=\"M10 10h80v80H10z\"/></g><g transform=\"translate(90 -10)\"><path id=\"_x23_fill\" class=\"st0\" d=\"M10 10h80v80H10z\"/></g>", 180, 100);
-var texture_0 = new Texture(atlas, new Rect(100, 0, 80, 80));
+var atlas = Svg2BaseTexture("<style>.st0{fill:#fff}.st1,.st2{fill:none;stroke:#ddd;stroke-width:20;stroke-miterlimit:10}.st2{fill:#fff}</style><g transform=\"translate(0 0)\"><path id=\"_x23_stroke\" class=\"st1\" d=\"M10 10h80v80H10z\"/></g><g transform=\"translate(-10 0)\"><path id=\"_x23_both\" class=\"st2\" d=\"M120 10h80v80h-80z\"/></g><g transform=\"translate(-10 90)\"><path id=\"_x23_fill\" class=\"st0\" d=\"M10 10h80v80H10z\"/></g>", 200, 180);
+var texture_0 = new Texture(atlas, new Rect(0, 100, 80, 80));
 var texture_1 = new Texture(atlas, new Rect(0, 0, 100, 100));
+var texture_2 = new Texture(atlas, new Rect(100, 0, 100, 100));
 
 
 // Class
@@ -108,8 +109,10 @@ function UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg() {
 	
 	var child_0 = this.fill = new Sprite(texture_0); this.addChild(child_0);
 var child_1 = this.stroke = new Sprite(texture_1); this.addChild(child_1);
+var child_2 = this.both = new Sprite(texture_2); this.addChild(child_2);
 
 	child_0.anchor.set(-0.13,-0.13);
+child_2.anchor.set(-1.10,0.00);
 
 	
 }
@@ -120,12 +123,11 @@ module.exports = UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg;
 /***/ },
 /* 2 */,
 /* 3 */,
-/* 4 */,
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 // Renderer (compatible retina)
-var width = 100, height = 100;
+var width = 210, height = 100;
 var renderer = PIXI.autoDetectRenderer(width, height, { antialias: false, resolution: window.devicePixelRatio });
 renderer.backgroundColor = 0xFFFFFF;
 renderer.view.style.width = width + 'px';
@@ -138,8 +140,10 @@ var Color = __webpack_require__(1);
 // Instanciate
 var color = new Color();
 
-// Transform it's color
-color.stroke.tint = color.fill.tint = 0x108CA2;
+// Transform some colors
+color.stroke.tint = 0xFF9D2A;
+color.fill.tint = 0xC15858;
+color.both.tint = 0x108CA2;
 
 // Render
 renderer.render(color)

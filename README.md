@@ -16,15 +16,6 @@ Use your SVG graphic files with [Pixi](http://www.pixijs.com) and [webpack](http
 `npm install --save pixi-svg-loader`
 
 ## Usage
-```js
-// Just require your svg, MySvg is now a class extending PIXI.Container
-var MySvg = require('pixi-svg!./my-svg.svg');
-
-// You can instanciate it and add it to your stage
-stage.addChild(new MySvg());
-```
-
-## Advanced usage
 
 The loader allows you to create a hierarchy tree, like native svg can do. For example, a car, with wheels.
 Let's assume we have an svg with this structure:
@@ -59,22 +50,22 @@ stage.car.rear_wheel.rotation += 0.005;
 
 ## More samples
 
-More samples are available in the *[samples](http://github.com/blunt1337/pixi-svg-loader/tree/master/samples)* folder.
+More samples are available in the *[samples](http://htmlpreview.github.io/?https://github.com/blunt1337/pixi-svg-loader/blob/master/samples/index.html)* folder.
 
 ## Why not use a simple svg converter?
 
-If you convert it to png, you loose the svg light file size, and you won't have this great hierarchy system. Placing your Sprite can be a pain without it.
-It is also a pain to convert it to PIXI.Graphics because Graphics is for simple primitive, for example it doesn't handle holes as easily as in svg.
-The svg is kept inside the result js file, and converted to PIXI.Texture at runtime with the browser's native svg renderer.
+- You can keep the svg's light weight filesize,
+- you keep the nodes' hierarchy tree, not the pain of placing sprites in containers, etc,
+- it will render as native svg as you designed it
 
 ## id query strings
 
-You can add a query string to your node's ids like #my-id?key1=value1&key2=value2. Valid keyes are for now:
+You can add a query string to your node's ids like #my-id?key1=value1&key2=value2. Valid keys are for now:
 #### origin (alias 'o')
 Change the origin of the element, the center point.
 The origin string can be composed of numeric pixels, percents, or special letters.
 Those values can be separated by a coma for x,y.
-Special letters are bounds of the paintbox. L: left, R: right, T: top, B: bottom, C or M: center/middle. i.g.:
+Special letters are bounds of the paintbox. L: left, R: right, T: top, B: bottom, C or M: center/middle. e.g.:
 - '10,10': 10px, 10px.
 - 'tr': top right corner.
 - 't': 0, top.
@@ -84,7 +75,7 @@ Special letters are bounds of the paintbox. L: left, R: right, T: top, B: bottom
 
 ## Production
 
-In production, just use the svgo-loader before pixi-svg-loader. ('pixi-svg!**svgo**!./car-stage.svg')
+In production, just use the [svgo-loader](https://github.com/rpominov/svgo-loader) before pixi-svg-loader. ('pixi-svg!**svgo**!./car-stage.svg')
 
 ## TODO
 
