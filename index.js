@@ -25,29 +25,22 @@ module.exports = function (content) {
 	let callback = this.async(),
 		config = getLoaderConfig(this)
 	
-	// Load the template
-	fs.readFile(__dirname+'/lib/template.js', 'utf8', (err, template) => {
-		if (err) {
-			return callback(err)
+	// Parse the svg as a template tree
+	parseSvg(content).then(svg => {
+		if (!svg) return callback(new Error('Not a valid svg, or empty'))
+		
+		// Compute the paintbox of groups
+		setGroupPaintbox(svg.tree)
+		
+		// Parse all origins
+		parseOrigins(svg.tree, svg.view_box, svg.view_box, config.default_origin)
+		
+		// Make an atlas
+		if (!config.disable_packing) {
+			makeAtlas(svg)
 		}
 		
-		// Parse the svg as a template tree
-		parseSvg(content).then(svg => {
-			if (!svg) return callback(new Error('Not a valid svg, or empty'))
-			
-			// Compute the paintbox of groups
-			setGroupPaintbox(svg.tree)
-			
-			// Parse all origins
-			parseOrigins(svg.tree, svg.view_box, svg.view_box, config.default_origin)
-			
-			// Make an atlas
-			if (!config.disable_packing) {
-				makeAtlas(svg)
-			}
-			
-			// Generate and return
-			callback(null, buildResult(svg, template, this))
-		}).catch(err => callback(err))
-	})
+		// Generate and return
+		callback(null, buildResult(svg, this)+'')
+	}).catch(err => callback(err))
 }

@@ -77,7 +77,7 @@ var BaseTexture = PIXI.BaseTexture;
  * @param	{Number}	h
  * @return	{BaseTexture}
  */
-module.exports = function (svg_element_content, w, h, x, y) {
+function svg2baseTexture(svg_element_content, w, h, x, y) {
 	var ratio = window.devicePixelRatio || 1;
 	x = x || 0;
 	y = y || 0;
@@ -90,35 +90,54 @@ module.exports = function (svg_element_content, w, h, x, y) {
 	return new BaseTexture(img, PIXI.SCALE_MODES.DEFAULT, ratio);
 };
 
+/**
+ * Extends the prototype of a class by another one
+ * @param	{Function}	subClass
+ * @param	{Function}	superClass
+ */
+function inherits(subClass, superClass) {
+	subClass.prototype = Object.create(superClass.prototype);
+	subClass.prototype.constructor = subClass;
+};
+
+module.exports = {
+	svg2baseTexture: svg2baseTexture,
+	inherits: inherits
+};
+
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-var Svg2BaseTexture = __webpack_require__(0);var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;
-
-// Textures
-var atlas = Svg2BaseTexture("<style>.st0{fill:#fff}.st1,.st2{fill:none;stroke:#ddd;stroke-width:20;stroke-miterlimit:10}.st2{fill:#fff}</style><g transform=\"translate(0 0)\"><path id=\"_x23_stroke\" class=\"st1\" d=\"M10 10h80v80H10z\"/></g><g transform=\"translate(-10 0)\"><path id=\"_x23_both\" class=\"st2\" d=\"M120 10h80v80h-80z\"/></g><g transform=\"translate(-10 90)\"><path id=\"_x23_fill\" class=\"st0\" d=\"M10 10h80v80H10z\"/></g>", 200, 180);
+var common = __webpack_require__(0),
+			svg2baseTexture = common.svg2baseTexture,
+			inherits = common.inherits;
+		
+		var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;
+		
+		// Textures
+		var atlas = svg2baseTexture("<style>.st0{fill:#fff}.st1,.st2{fill:none;stroke:#ddd;stroke-width:20;stroke-miterlimit:10}.st2{fill:#fff}</style><g transform=\"translate(0 0)\"><path id=\"_x23_stroke\" class=\"st1\" d=\"M10 10h80v80H10z\"/></g><g transform=\"translate(-10 0)\"><path id=\"_x23_both\" class=\"st2\" d=\"M120 10h80v80h-80z\"/></g><g transform=\"translate(-10 90)\"><path id=\"_x23_fill\" class=\"st0\" d=\"M10 10h80v80H10z\"/></g>", 200, 180);
 var texture_0 = new Texture(atlas, new Rect(0, 100, 80, 80));
 var texture_1 = new Texture(atlas, new Rect(0, 0, 100, 100));
 var texture_2 = new Texture(atlas, new Rect(100, 0, 100, 100));
 
 
-// Class
-function UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg() {
-	Container.call(this);
-	
-	var child_0 = this.fill = new Sprite(texture_0); this.addChild(child_0);
+		// Class
+		function UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg() {
+			Container.call(this);
+			
+			var child_0 = this.fill = new Sprite(texture_0); this.addChild(child_0);
 var child_1 = this.stroke = new Sprite(texture_1); this.addChild(child_1);
 var child_2 = this.both = new Sprite(texture_2); this.addChild(child_2);
 
-	child_0.anchor.set(-0.13,-0.13);
+			child_0.anchor.set(-0.13,-0.13);
 child_2.anchor.set(-1.10,0.00);
 
-	
-}
-UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg.prototype = Object.create(PIXI.Container.prototype);
-UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg.prototype.constructor = UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg;
-module.exports = UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg;
+			
+		}
+		inherits(UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg, Container);
+		
+		module.exports = UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg;
 
 /***/ },
 /* 2 */,
