@@ -1,5 +1,6 @@
 {
   "name": "pixi-svg-loader",
+  "version": "1.0.0",
   "description": "svg loader for pixi on webpack",
   "main": "index.js",
   "scripts": {
