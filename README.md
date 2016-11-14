@@ -36,7 +36,11 @@ Every id starting with a # will be accessible in javascript. Other ids are just 
 Extra parameter can be passed with a [query string](http://github.com/blunt1337/pixi-svg-loader/blob/master/README.md#id-query-strings). In this example, the wheels' origin is 'cc' (x: center, y: center).
 
 ```js
-// Convert and instanciate the svg
+// Your pixi renderer
+var renderer = PIXI.autoDetectRenderer(...)
+document.body.appendChild(renderer.view)
+
+// Convert to a container class and instanciate
 var CarStage = require('pixi-svg!./car-stage.svg');
 var stage = new CarStage();
 
@@ -46,6 +50,13 @@ stage.car.position.x += 0.05;
 // And turn the wheels
 stage.car.front_wheel.rotation += 0.005;
 stage.car.rear_wheel.rotation += 0.005;
+
+// Render loop
+function gameLoop() {
+    requestAnimationFrame(gameLoop)
+    renderer.render(stage)
+}
+gameLoop()
 ```
 
 ## More samples
