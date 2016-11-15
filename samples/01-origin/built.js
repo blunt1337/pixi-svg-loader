@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "/";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -107,47 +107,39 @@ module.exports = {
 
 /***/ },
 /* 1 */,
-/* 2 */
+/* 2 */,
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-var common = __webpack_require__(0),
+
+		var common = __webpack_require__(0),
 			svg2baseTexture = common.svg2baseTexture,
 			inherits = common.inherits;
-		
-		var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;
-		
-		// Textures
-		var atlas = svg2baseTexture("<style>.st0{fill:none;stroke:#e6e6e6;stroke-miterlimit:10}.st1,.st2,.st3,.st4,.st5{fill:#f7931e;stroke:#f15a24;stroke-width:12;stroke-miterlimit:10}.st2,.st3,.st4,.st5{fill:#736357;stroke:#534741;stroke-width:5}.st3,.st4,.st5{fill:none;stroke:#39b54a;stroke-width:4}.st4,.st5{fill:#8cc63f}.st5{fill:#b3b3b3;stroke:gray;stroke-width:5}</style><g transform=\"translate(-114 -114)\"><circle id=\"sun\" class=\"st0\" cx=\"250\" cy=\"250\" r=\"135\"/><path id=\"earth_path\" class=\"st1\" d=\"M239.9 268l-10.1-17.5 10.1-17.5h20.2l10.1 17.5-10.1 17.5z\"/></g><g transform=\"translate(224 -183)\"><path id=\"earth\" class=\"st2\" d=\"M101.8 272.5L88.7 250l13.1-22.5h26.4l13.1 22.5-13.1 22.5z\"/><path id=\"tronc\" class=\"st3\" d=\"M115 219v8\"/><path id=\"tree\" class=\"st4\" d=\"M109.5 221l-5.2-9.5 5.2-9.5H120l5.2 9.5-5.2 9.5z\"/><circle id=\"moon_path\" class=\"st0\" cx=\"115\" cy=\"250\" r=\"66.2\"/></g><g transform=\"translate(173 -168)\"><path id=\"#moon\" class=\"st5\" d=\"M108.5 327.5l-6.6-11.5 6.6-11.5h13.1l6.6 11.5-6.6 11.5z\"/></g>", 406, 272);
+		var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;var atlas = svg2baseTexture("<style>.st0{fill:none;stroke:#e6e6e6;stroke-miterlimit:10}.st1,.st2,.st3,.st4,.st5{fill:#f7931e;stroke:#f15a24;stroke-width:12;stroke-miterlimit:10}.st2,.st3,.st4,.st5{fill:#736357;stroke:#534741;stroke-width:5}.st3,.st4,.st5{fill:none;stroke:#39b54a;stroke-width:4}.st4,.st5{fill:#8cc63f}.st5{fill:#b3b3b3;stroke:gray;stroke-width:5}</style><g transform=\"translate(-114 -114)\"><circle id=\"sun\" class=\"st0\" cx=\"250\" cy=\"250\" r=\"135\"/><path id=\"earth_path\" class=\"st1\" d=\"M239.9 268l-10.1-17.5 10.1-17.5h20.2l10.1 17.5-10.1 17.5z\"/></g><g transform=\"translate(224 -183)\"><path id=\"earth\" class=\"st2\" d=\"M101.8 272.5L88.7 250l13.1-22.5h26.4l13.1 22.5-13.1 22.5z\"/><path id=\"tronc\" class=\"st3\" d=\"M115 219v8\"/><path id=\"tree\" class=\"st4\" d=\"M109.5 221l-5.2-9.5 5.2-9.5H120l5.2 9.5-5.2 9.5z\"/><circle id=\"moon_path\" class=\"st0\" cx=\"115\" cy=\"250\" r=\"66.2\"/></g><g transform=\"translate(173 -168)\"><path id=\"#moon\" class=\"st5\" d=\"M108.5 327.5l-6.6-11.5 6.6-11.5h13.1l6.6 11.5-6.6 11.5z\"/></g>", 406, 272);
 var texture_1 = new Texture(atlas, new Rect(0, 0, 272, 272));
 var texture_3 = new Texture(atlas, new Rect(272, 0, 134, 134));
 var texture_4 = new Texture(atlas, new Rect(272, 134, 33, 28));
-
-
-		// Class
-		function UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg() {
-			Container.call(this);
-			
-			var child_0 = this.sun = new Container(); this.addChild(child_0);
+function UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg() {
+Container.call(this);
+var child_0 = this.sun = new Container(); this.addChild(child_0);
 var child_1 = new Sprite(texture_1); child_0.addChild(child_1);
 var child_2 = child_0.earth = new Container(); child_0.addChild(child_2);
 var child_3 = new Sprite(texture_3); child_2.addChild(child_3);
 var child_4 = child_2.moon = new Sprite(texture_4); child_2.addChild(child_4);
 
-			child_1.anchor.set(0.50,0.50);
+					child_1.anchor.set(0.50,0.50);
 child_3.anchor.set(0.50,0.50);
 child_4.anchor.set(0.50,0.50);
 
-			child_0.position.set(250.00,250.00);
+					child_0.position.set(250.00,250.00);
 child_2.position.set(-135.00,0.00);
 child_4.position.set(0.50,66.00);
 
-		}
-		inherits(UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg, Container);
-		
-		module.exports = UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg;
+				}
+inherits(UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg, Container);module.exports = UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg;
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 // Renderer (compatible retina)
@@ -159,7 +151,7 @@ renderer.view.style.height = height + 'px';
 document.getElementById('origin').appendChild(renderer.view)
 
 // The SVG is now a PIXI Container, default origin of objects is 'cc' (center, center)
-var Origin = __webpack_require__(2);
+var Origin = __webpack_require__(3);
 
 // Instanciate
 var origin = new Origin();

@@ -73,6 +73,7 @@ More samples are available in the *[samples](http://htmlpreview.github.io/?https
 
 You can add a query string to your node's ids like #my-id?key1=value1&key2=value2. Valid keys are for now:
 #### origin (alias 'o')
+
 Change the origin of the element, the center point.
 The origin string can be composed of numeric pixels, percents, or special letters.
 Those values can be separated by a coma for x,y.
@@ -83,6 +84,18 @@ Special letters are bounds of the paintbox. L: left, R: right, T: top, B: bottom
 - 'r': right, 0.
 - 'r - 2': right - 2px, 0.
 - 'l + 5%, t + 5%': left + 5% of viewbox width, top + 5% of viewbox height
+
+#### classname (alias 'c')
+
+Set a classname on the node so you can re-use it multiple times. e.g.:
+```xml
+<circle id="#circle?classname=my-circle"/>
+```
+can be instanciate with
+```js
+var Svg = require('my.svg');
+var circle = new Svg.MyCircle();
+```
 
 ## Production
 
@@ -100,8 +113,9 @@ In production, just use the [svgo-loader](https://github.com/rpominov/svgo-loade
 - [x] Option to disable the packing / or disable when packing fails
 - [ ] Onload/onerror event
 - [ ] Option in the loader, to create a larger resolution
-- [ ] To be able to put a classname on a node
+- [x] To be able to put a classname on a node
 - [ ] Option to make [Phaser](https://phaser.io) Sprite that is based on PIXI
+- [ ] Paintbox are not working outside of the viewbox
 - [ ] Option documentation
 - [ ] More tests
 
