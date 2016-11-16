@@ -41,6 +41,7 @@ module.exports = function (content) {
 		}
 		
 		// Generate and return
-		callback(null, buildResult(svg, this)+'')
+		let resolution = config.resolution ? config.resolution : 'window.devicePixelRatio || 1'
+		callback(null, buildResult(svg, this, resolution)+'')
 	}).catch(err => callback(err))
 }

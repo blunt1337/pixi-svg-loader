@@ -72,13 +72,15 @@ var BaseTexture = PIXI.BaseTexture;
 
 /**
  * Create base texture from svg content
- * @param	{String}	svg_element_content
- * @param	{Number}	w
- * @param	{Number}	h
+ * @param	{String}	svg_element_content		Content of the svg
+ * @param	{int}		ratio					Resolution
+ * @param	{int}		w						Width
+ * @param	{int}		h						Height
+ * @param	{int?}		x						Position x, default 0
+ * @param	{int?}		y						Position y, default 0
  * @return	{BaseTexture}
  */
-function svg2baseTexture(svg_element_content, w, h, x, y) {
-	var ratio = window.devicePixelRatio || 1;
+function svg2baseTexture(svg_element_content, ratio, w, h, x, y) {
 	x = x || 0;
 	y = y || 0;
 	
@@ -107,15 +109,14 @@ module.exports = {
 
 /***/ },
 /* 1 */,
-/* 2 */,
-/* 3 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 
 		var common = __webpack_require__(0),
 			svg2baseTexture = common.svg2baseTexture,
 			inherits = common.inherits;
-		var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;var atlas = svg2baseTexture("<style>.st0{fill:none;stroke:#e6e6e6;stroke-miterlimit:10}.st1,.st2,.st3,.st4,.st5{fill:#f7931e;stroke:#f15a24;stroke-width:12;stroke-miterlimit:10}.st2,.st3,.st4,.st5{fill:#736357;stroke:#534741;stroke-width:5}.st3,.st4,.st5{fill:none;stroke:#39b54a;stroke-width:4}.st4,.st5{fill:#8cc63f}.st5{fill:#b3b3b3;stroke:gray;stroke-width:5}</style><g transform=\"translate(-114 -114)\"><circle id=\"sun\" class=\"st0\" cx=\"250\" cy=\"250\" r=\"135\"/><path id=\"earth_path\" class=\"st1\" d=\"M239.9 268l-10.1-17.5 10.1-17.5h20.2l10.1 17.5-10.1 17.5z\"/></g><g transform=\"translate(225 -183)\"><path id=\"earth\" class=\"st2\" d=\"M101.8 272.5L88.7 250l13.1-22.5h26.4l13.1 22.5-13.1 22.5z\"/><path id=\"tronc\" class=\"st3\" d=\"M115 219v8\"/><path id=\"tree\" class=\"st4\" d=\"M109.5 221l-5.2-9.5 5.2-9.5H120l5.2 9.5-5.2 9.5z\"/><circle id=\"moon_path\" class=\"st0\" cx=\"115\" cy=\"250\" r=\"66.2\"/></g><g transform=\"translate(174 -167)\"><path id=\"#moon\" class=\"st5\" d=\"M108.5 327.5l-6.6-11.5 6.6-11.5h13.1l6.6 11.5-6.6 11.5z\"/></g>", 408, 273);
+		var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;var atlas = svg2baseTexture("<style>.st0{fill:none;stroke:#e6e6e6;stroke-miterlimit:10}.st1,.st2,.st3,.st4,.st5{fill:#f7931e;stroke:#f15a24;stroke-width:12;stroke-miterlimit:10}.st2,.st3,.st4,.st5{fill:#736357;stroke:#534741;stroke-width:5}.st3,.st4,.st5{fill:none;stroke:#39b54a;stroke-width:4}.st4,.st5{fill:#8cc63f}.st5{fill:#b3b3b3;stroke:gray;stroke-width:5}</style><g transform=\"translate(-114 -114)\"><circle id=\"sun\" class=\"st0\" cx=\"250\" cy=\"250\" r=\"135\"/><path id=\"earth_path\" class=\"st1\" d=\"M239.9 268l-10.1-17.5 10.1-17.5h20.2l10.1 17.5-10.1 17.5z\"/></g><g transform=\"translate(225 -183)\"><path id=\"earth\" class=\"st2\" d=\"M101.8 272.5L88.7 250l13.1-22.5h26.4l13.1 22.5-13.1 22.5z\"/><path id=\"tronc\" class=\"st3\" d=\"M115 219v8\"/><path id=\"tree\" class=\"st4\" d=\"M109.5 221l-5.2-9.5 5.2-9.5H120l5.2 9.5-5.2 9.5z\"/><circle id=\"moon_path\" class=\"st0\" cx=\"115\" cy=\"250\" r=\"66.2\"/></g><g transform=\"translate(174 -167)\"><path id=\"#moon\" class=\"st5\" d=\"M108.5 327.5l-6.6-11.5 6.6-11.5h13.1l6.6 11.5-6.6 11.5z\"/></g>", window.devicePixelRatio || 1, 408, 273);
 var texture_1 = new Texture(atlas, new Rect(0, 0, 272, 272));
 var texture_3 = new Texture(atlas, new Rect(273, 0, 134, 134));
 var texture_4 = new Texture(atlas, new Rect(273, 135, 33, 28));
@@ -139,6 +140,7 @@ child_4.position.set(0.50,66.00);
 inherits(UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg, Container);module.exports = UsersBluntProjectsNodejsPixiSvgLoaderSamples01OriginOriginSvg;
 
 /***/ },
+/* 3 */,
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -151,7 +153,7 @@ renderer.view.style.height = height + 'px';
 document.getElementById('origin').appendChild(renderer.view)
 
 // The SVG is now a PIXI Container, default origin of objects is 'cc' (center, center)
-var Origin = __webpack_require__(3);
+var Origin = __webpack_require__(2);
 
 // Instanciate
 var origin = new Origin();

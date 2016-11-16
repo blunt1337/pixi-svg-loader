@@ -112,7 +112,7 @@ In production, just use the [svgo-loader](https://github.com/rpominov/svgo-loade
 - [x] Pack all parts into one svg then split the texture with new PIXI.Texture(base, new PIXI.Rectangle(x, y, w, h));
 - [x] Option to disable the packing / or disable when packing fails
 - [ ] Onload/onerror event
-- [ ] Option in the loader, to create a larger resolution
+- [x] Option in the loader, to create a larger resolution
 - [x] To be able to put a classname on a node
 - [ ] Option to make [Phaser](https://phaser.io) Sprite that is based on PIXI
 - [ ] Paintbox are not working outside of the viewbox

@@ -72,13 +72,15 @@ var BaseTexture = PIXI.BaseTexture;
 
 /**
  * Create base texture from svg content
- * @param	{String}	svg_element_content
- * @param	{Number}	w
- * @param	{Number}	h
+ * @param	{String}	svg_element_content		Content of the svg
+ * @param	{int}		ratio					Resolution
+ * @param	{int}		w						Width
+ * @param	{int}		h						Height
+ * @param	{int?}		x						Position x, default 0
+ * @param	{int?}		y						Position y, default 0
  * @return	{BaseTexture}
  */
-function svg2baseTexture(svg_element_content, w, h, x, y) {
-	var ratio = window.devicePixelRatio || 1;
+function svg2baseTexture(svg_element_content, ratio, w, h, x, y) {
 	x = x || 0;
 	y = y || 0;
 	
@@ -106,15 +108,14 @@ module.exports = {
 };
 
 /***/ },
-/* 1 */,
-/* 2 */
+/* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
 
 		var common = __webpack_require__(0),
 			svg2baseTexture = common.svg2baseTexture,
 			inherits = common.inherits;
-		var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;var atlas = svg2baseTexture("<style>.st0{fill:url(#XMLID_5_)}.st1{opacity:.3;fill:#fff}.st2{opacity:.31;fill:none;stroke:#fff;stroke-miterlimit:10}.st3{fill:#333}.st4{fill:#fff}</style><radialGradient id=\"XMLID_5_\" cx=\"5.042\" cy=\"1.681\" r=\"443.858\" gradientTransform=\"matrix(1.1316 .4328 -.5299 .8792 1.514 -1.98)\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#3862a0\"></stop><stop offset=\"1\" stop-color=\"#01073e\"></stop></radialGradient><g transform=\"translate(0 0)\"><g id=\"bg\"><path id=\"XMLID_2_\" class=\"st0\" d=\"M0 0h500v200H0z\"/><path id=\"XMLID_3_\" class=\"st1\" d=\"M0 0h500v200H0z\"/></g></g><g transform=\"translate(-101 201)\"><path id=\"XMLID_1_\" class=\"st2\" d=\"M101.5 175V-43\"/></g><g transform=\"translate(-79 37)\"><path id=\"_x23_body\" class=\"st3\" d=\"M81.9 180.6c4 2.8 8.6 4.2 12.2 4.9-2.9 1.4-6.3 3.8-9.2 8-.4.6-.3 1.5.3 2 .6.4 1.5.3 2-.3 2.9-4.1 6.1-6.2 8.8-7.4-1.6 2-3.4 5.2-4.9 10.3-.2.7.2 1.5.9 1.8.7.2 1.5-.2 1.8-.9 2.3-7.8 5.1-10.4 6.6-11.3.2.6.6 1 1 1.3 0 .2-.1.3-.1.5 0 .7.4 1.3.8 1.4l.2-1.6h.2l.2 1.6c.5-.2.8-.7.8-1.4 0-.2 0-.4-.1-.5.4-.3.8-.7 1-1.3 1.5.9 4.2 3.5 6.6 11.3.2.7 1 1.2 1.8.9.7-.2 1.2-1 .9-1.8-1.5-5-3.2-8.2-4.9-10.2 2.7 1.2 5.9 3.3 8.8 7.4.4.6 1.3.8 2 .3.6-.4.8-1.3.3-2-3-4.2-6.3-6.6-9.2-8 3.6-.7 8.2-2.1 12.2-4.9.6-.4.8-1.3.3-2-.3-.4-.7-.6-1.1-.6-.3 0-.6.1-.8.3-4 2.8-8.7 4.1-12.2 4.6 2.9-2.6 6.4-7.4 9.3-16.4.2-.7-.2-1.5-.9-1.8-.1 0-.3-.1-.4-.1-.6 0-1.1.4-1.3 1-2.6 8-5.5 12.3-7.9 14.6.2-.8.3-1.6.3-2.5 0-4.2-2.6-7.6-5.7-7.6s-5.7 3.4-5.7 7.6c0 .9.1 1.7.3 2.5-2.4-2.3-5.3-6.6-7.9-14.6-.2-.6-.7-1-1.3-1-.1 0-.3 0-.4.1-.7.2-1.1 1-.9 1.8 2.9 9.1 6.4 13.9 9.3 16.4-3.5-.6-8.2-1.8-12.2-4.6-.2-.2-.5-.3-.8-.3-.4 0-.9.2-1.1.6-.7.6-.5 1.5.1 1.9z\"/></g><g transform=\"translate(-49 35)\"><ellipse id=\"_x23_ass\" class=\"st4\" cx=\"102.4\" cy=\"174.6\" rx=\"6.6\" ry=\"7.7\"/></g>", 501, 377);
+		var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;var atlas = svg2baseTexture("<style>.st0{fill:url(#XMLID_5_)}.st1{opacity:.3;fill:#fff}.st2{opacity:.31;fill:none;stroke:#fff;stroke-miterlimit:10}.st3{fill:#333}.st4{fill:#fff}</style><radialGradient id=\"XMLID_5_\" cx=\"5.042\" cy=\"1.681\" r=\"443.858\" gradientTransform=\"matrix(1.1316 .4328 -.5299 .8792 1.514 -1.98)\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0\" stop-color=\"#3862a0\"></stop><stop offset=\"1\" stop-color=\"#01073e\"></stop></radialGradient><g transform=\"translate(0 0)\"><g id=\"bg\"><path id=\"XMLID_2_\" class=\"st0\" d=\"M0 0h500v200H0z\"/><path id=\"XMLID_3_\" class=\"st1\" d=\"M0 0h500v200H0z\"/></g></g><g transform=\"translate(-101 201)\"><path id=\"XMLID_1_\" class=\"st2\" d=\"M101.5 175V-43\"/></g><g transform=\"translate(-79 37)\"><path id=\"_x23_body\" class=\"st3\" d=\"M81.9 180.6c4 2.8 8.6 4.2 12.2 4.9-2.9 1.4-6.3 3.8-9.2 8-.4.6-.3 1.5.3 2 .6.4 1.5.3 2-.3 2.9-4.1 6.1-6.2 8.8-7.4-1.6 2-3.4 5.2-4.9 10.3-.2.7.2 1.5.9 1.8.7.2 1.5-.2 1.8-.9 2.3-7.8 5.1-10.4 6.6-11.3.2.6.6 1 1 1.3 0 .2-.1.3-.1.5 0 .7.4 1.3.8 1.4l.2-1.6h.2l.2 1.6c.5-.2.8-.7.8-1.4 0-.2 0-.4-.1-.5.4-.3.8-.7 1-1.3 1.5.9 4.2 3.5 6.6 11.3.2.7 1 1.2 1.8.9.7-.2 1.2-1 .9-1.8-1.5-5-3.2-8.2-4.9-10.2 2.7 1.2 5.9 3.3 8.8 7.4.4.6 1.3.8 2 .3.6-.4.8-1.3.3-2-3-4.2-6.3-6.6-9.2-8 3.6-.7 8.2-2.1 12.2-4.9.6-.4.8-1.3.3-2-.3-.4-.7-.6-1.1-.6-.3 0-.6.1-.8.3-4 2.8-8.7 4.1-12.2 4.6 2.9-2.6 6.4-7.4 9.3-16.4.2-.7-.2-1.5-.9-1.8-.1 0-.3-.1-.4-.1-.6 0-1.1.4-1.3 1-2.6 8-5.5 12.3-7.9 14.6.2-.8.3-1.6.3-2.5 0-4.2-2.6-7.6-5.7-7.6s-5.7 3.4-5.7 7.6c0 .9.1 1.7.3 2.5-2.4-2.3-5.3-6.6-7.9-14.6-.2-.6-.7-1-1.3-1-.1 0-.3 0-.4.1-.7.2-1.1 1-.9 1.8 2.9 9.1 6.4 13.9 9.3 16.4-3.5-.6-8.2-1.8-12.2-4.6-.2-.2-.5-.3-.8-.3-.4 0-.9.2-1.1.6-.7.6-.5 1.5.1 1.9z\"/></g><g transform=\"translate(-49 35)\"><ellipse id=\"_x23_ass\" class=\"st4\" cx=\"102.4\" cy=\"174.6\" rx=\"6.6\" ry=\"7.7\"/></g>", window.devicePixelRatio || 1, 501, 377);
 var texture_0 = new Texture(atlas, new Rect(0, 0, 500, 200));
 var texture_2 = new Texture(atlas, new Rect(0, 201, 1, 175));
 var texture_3 = new Texture(atlas, new Rect(2, 201, 43, 36));
@@ -147,6 +148,7 @@ inherits(Spider, Container);module.exports = UsersBluntProjectsNodejsPixiSvgLoad
 module.exports.Spider = Spider;
 
 /***/ },
+/* 2 */,
 /* 3 */,
 /* 4 */,
 /* 5 */,
@@ -162,7 +164,7 @@ renderer.view.style.height = height + 'px';
 document.getElementById('classname').appendChild(renderer.view)
 
 // The SVG is now a PIXI Container
-var MySvgScene = __webpack_require__(2);
+var MySvgScene = __webpack_require__(1);
 
 // Instanciate
 var scene = new MySvgScene();
