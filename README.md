@@ -97,6 +97,17 @@ var Svg = require('my.svg');
 var circle = new Svg.MyCircle();
 ```
 
+## Loader's options
+
+#### default_origin (default: viewbox x and y)
+Just like [origin](https://github.com/blunt1337/pixi-svg-loader#origin-alias-o) option, but as default.
+
+#### resolution (default: "window.devicePixelRatio || 1")
+Resolution of the generated texture, can be javascript code.
+
+#### disable_packing
+Disable the packing of multiple textures into one texture.
+
 ## Production
 
 In production, just use the [svgo-loader](https://github.com/rpominov/svgo-loader) before pixi-svg-loader. ('pixi-svg!**svgo**!./car-stage.svg')
@@ -111,12 +122,11 @@ In production, just use the [svgo-loader](https://github.com/rpominov/svgo-loade
 - [x] To be able to put an origin on a node
 - [x] Pack all parts into one svg then split the texture with new PIXI.Texture(base, new PIXI.Rectangle(x, y, w, h));
 - [x] Option to disable the packing / or disable when packing fails
-- [ ] Onload/onerror event
 - [x] Option in the loader, to create a larger resolution
 - [x] To be able to put a classname on a node
-- [ ] Option to make [Phaser](https://phaser.io) Sprite that is based on PIXI
 - [ ] Paintbox are not working outside of the viewbox
-- [ ] Option documentation
+- [ ] Load images with the PIXI loader
+- [ ] Onload/onerror event
 - [ ] More tests
 
 To suggest a feature, report a bug, or general discussion:
