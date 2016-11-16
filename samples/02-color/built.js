@@ -113,10 +113,10 @@ module.exports = {
 		var common = __webpack_require__(0),
 			svg2baseTexture = common.svg2baseTexture,
 			inherits = common.inherits;
-		var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;var atlas = svg2baseTexture("<style>.st0{fill:#fff}.st1,.st2{fill:none;stroke:#ddd;stroke-width:20;stroke-miterlimit:10}.st2{fill:#fff}</style><g transform=\"translate(0 0)\"><path id=\"_x23_stroke\" class=\"st1\" d=\"M10 10h80v80H10z\"/></g><g transform=\"translate(-10 0)\"><path id=\"_x23_both\" class=\"st2\" d=\"M120 10h80v80h-80z\"/></g><g transform=\"translate(-10 90)\"><path id=\"_x23_fill\" class=\"st0\" d=\"M10 10h80v80H10z\"/></g>", 200, 180);
-var texture_0 = new Texture(atlas, new Rect(0, 100, 80, 80));
+		var Container = PIXI.Container, Sprite = PIXI.Sprite, Texture = PIXI.Texture, Rect = PIXI.Rectangle;var atlas = svg2baseTexture("<style>.st0{fill:#fff}.st1,.st2{fill:none;stroke:#ddd;stroke-width:20;stroke-miterlimit:10}.st2{fill:#fff}</style><g transform=\"translate(0 0)\"><path id=\"_x23_stroke\" class=\"st1\" d=\"M10 10h80v80H10z\"/></g><g transform=\"translate(-9 0)\"><path id=\"_x23_both\" class=\"st2\" d=\"M120 10h80v80h-80z\"/></g><g transform=\"translate(-10 91)\"><path id=\"_x23_fill\" class=\"st0\" d=\"M10 10h80v80H10z\"/></g>", 202, 182);
+var texture_0 = new Texture(atlas, new Rect(0, 101, 80, 80));
 var texture_1 = new Texture(atlas, new Rect(0, 0, 100, 100));
-var texture_2 = new Texture(atlas, new Rect(100, 0, 100, 100));
+var texture_2 = new Texture(atlas, new Rect(101, 0, 100, 100));
 function UsersBluntProjectsNodejsPixiSvgLoaderSamples02ColorColorSvg() {
 Container.call(this);
 var child_0 = this.fill = new Sprite(texture_0); this.addChild(child_0);

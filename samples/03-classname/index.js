@@ -17,17 +17,13 @@ scene.removeChild(scene.spider);
 var Spider = MySvgScene.Spider;
 
 // Time in frames until the spider is removed
-var LIFETIME = 60 * 15;
+var LIFETIME = 60 * 60;
 
 // All spiders
 var spiders = [];
 
 // Add custom functions
 Spider.prototype.init = function () {
-	// Random colors
-	this.body.tint = Math.random() * 0xFFFFFF;  
-	this.ass.tint = Math.random() * 0xFFFFFF;
-	
 	// Random position
 	this.toY = Math.random() * height;
 	this.position.x = Math.random() * width;
@@ -39,7 +35,7 @@ Spider.prototype.init = function () {
 	this.lifetime = LIFETIME;
 };
 Spider.prototype.tick = function () {
-	// Move + alpha
+	// Move
 	this.position.y += (this.toY - this.position.y) / 5;
 	
 	// Dead
@@ -67,7 +63,7 @@ function gameLoop() {
 		scene.addChild(spider);
 		spiders.push(spider);
 		
-		time_before_new_spider = LIFETIME / 10;
+		time_before_new_spider = LIFETIME / 50;
 	}
 }
 gameLoop()
