@@ -69,6 +69,14 @@ More samples are available in the *[samples](http://htmlpreview.github.io/?https
 - you keep the nodes' hierarchy tree, not the pain of placing sprites in containers, etc,
 - it will render as native svg as you designed it
 
+# Preparing your SVG files
+
+Your SVG files must not use groups with their own `translate`
+attributes. i.e. all coordinates in paths etc. must be global.
+
+In Inkscape, the [apply transforms](https://github.com/Klowner/inkscape-applytransforms)
+plugin is useful to remove these.
+
 ## id query strings
 
 You can add a query string to your node's ids like #my-id?key1=value1&key2=value2. Valid keys are for now:
